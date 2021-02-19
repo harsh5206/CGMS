@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg my-nav">
+      <!-- <a class="navbar-brand" href="#">Navbar</a>-->
+      <button
+        class="navbar-toggler"
+        type="button"ṭ
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"
+          ><i class="fa fa-bars" aria-hidden="true"></i
+        ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/complaint"
+              routerLinkActive="active"
+              >Complaint</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Admin-Login</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/dashboard"
+              routerLinkActive="active"
+              >Admin Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 class="page-header" align="center">Add Complaint</h2>
+      <form
+        [formGroup]="angForm"
+        (submit)="addComplaint()"
+        (keydown.enter)="$event.preventDefault()"
+      >
+        <div class="form-group" float="left" display="inline-block">
+          <label>Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            [ngClass]="{
+              'is-invalid': submitted && angForm.controls['name'].errors
+            }"
+          />
+        </div>
+        <div
+          *ngIf="submitted && angForm.controls['name'].errors"
+          class="invalid-feedback d-block"
+        >
+          <div *ngIf="angForm.controls['name'].errors.required">
+            Name is required
+          </div>
+        </div>
+        <br />
+
+        <div class="form-group" float="left" display="inline-block">
+          <label>rollno</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="rollno"
+            [ngClass]="{
+              'is-invalid': submitted && angForm.controls['rollno'].errors
+            }"
+          />
+        </div>
+        <div
+          *ngIf="submitted && angForm.controls['rollno'].errors"
+          class="invalid-feedback d-block"
+        >
+          <div *ngIf="angForm.controls['rollno'].errors.required">
+            rollno is required
+          </div>
+        </div>
+        <br />
+
+        <div class="form-group" float="left" display="inline-block">
+          <label>branch</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="branch"
+            [ngClass]="{
+              'is-invalid': submitted && angForm.controls['branch'].errors
+            }"
+          />
+        </div>
+        <div
+          *ngIf="submitted && angForm.controls['branch'].errors"
+          class="invalid-feedback d-block"
+        >
+          <div *ngIf="angForm.controls['branch'].errors.required">
+            branch is required
+          </div>
+        </div>
+        <br />
+
+        <div class="form-group" float="left" display="inline-block">
+          <label>division</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="division"
+            [ngClass]="{
+              'is-invalid': submitted && angForm.controls['branch'].errors
+            }"
+          />
+        </div>
+        <div
+          *ngIf="submitted && angForm.controls['division'].errors"
+          class="invalid-feedback d-block"
+        >
+          <div *ngIf="angForm.controls['division'].errors.required">
+            division is required
+          </div>
+        </div>
+        <br />
+
+        <div class="form-group" float="left" display="inline-block">
+          <label>complaint type</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="complaint_type"
+            [ngClass]="{
+              'is-invalid':
+                submitted && angForm.controls['complaint_type'].errors
+            }"
+          />
+        </div>
+        <div
+          *ngIf="submitted && angForm.controls['complaint_type'].errors"
+          class="invalid-feedback d-block"
+        >
+          <div *ngIf="angForm.controls['complaint_type'].errors.required">
+            complaint type is required
+          </div>
+        </div>
+        <br />
+
+        <div class="form-group" float="left" display="inline-block">
+          <label>complaint description in short words</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="complaint_desc"
+            [ngClass]="{
+              'is-invalid':
+                submitted && angForm.controls['complaint_desc'].errors
+            }"
+          />
+        </div>
+        <div
+          *ngIf="submitted && angForm.controls['complaint_desc'].errors"
+          class="invalid-feedback d-block"
+        >
+          <div *ngIf="angForm.controls['complaint_desc'].errors.required">
+            complaint description is required
+          </div>
+        </div>
+        <br />
+
+        <br />
+
+        <input type="submit" class="btn btn-success" value="Add Complaint" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.my-nav .nav-link {
+  color: black;
+}
+.my-nav .navbar-brand {
+  color: black;
+}
+.navbar-toggler-icon {
+  color: black;
+}
+
+nav ul li:hover {
+  background-color: #0a79df;
+}

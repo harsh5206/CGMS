@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg my-nav">
+        <!-- <a class="navbar-brand" href="#">Navbar</a>-->
+        <button class="navbar-toggler" type="button" ṭ data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/complaint" routerLinkActive="active">Complaint</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Admin-Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Admin Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="center-content">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Login/Register</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab label="Login">
+
+                        <mat-form-field class="example-lebel" appearance="fill">
+                            <mat-label>Select</mat-label>
+                            <mat-select [(ngModel)]="type" name="type">
+                                <mat-option value="student">Student</mat-option>
+                                <mat-option value="admin">Admin</mat-option>
+                                <mat-option value="greivance">Greivance Member</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="Email" value="" [(ngModel)]="email">
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="password" [(ngModel)]="password">
+                            <mat-icon matSuffix>vpn_key</mat-icon>
+                        </mat-form-field>
+                        <button mat-button color="primary">Login</button>
+                    </mat-tab>
+
+
+                    <mat-tab label="Register">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Name</mat-label>
+                            <input type="name" matInput placeholder="name" value="" [(ngModel)]="reg_name">
+                            <mat-icon matSuffix>sort_by_alpha</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Gender</mat-label>
+                            <input type="gender" matInput placeholder="gender" value="" [(ngModel)]="reg_gender">
+                            <mat-icon matSuffix>transgender</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-lebel" appearance="fill">
+                            <mat-label>Acedemic Year</mat-label>
+                            <mat-select [(ngModel)]="reg_year" name="reg_year">
+                                <mat-option value="2020">2020</mat-option>
+                                <mat-option value="2019">2019</mat-option>
+                                <mat-option value="2018">2018</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-lebel" appearance="fill">
+                            <mat-label>Department</mat-label>
+                            <mat-select [(ngModel)]="reg_department" name="reg_department">
+                                <mat-option value="it">IT</mat-option>
+                                <mat-option value="cs">CS</mat-option>
+                                <mat-option value="civil">Civil</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-lebel" appearance="fill">
+                            <mat-label>Batch</mat-label>
+                            <mat-select [(ngModel)]="reg_batch" name="reg_batch">
+                                <mat-option value="a">A</mat-option>
+                                <mat-option value="b">B</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Roll No</mat-label>
+                            <input type="rollno" matInput placeholder="rollno" value="" [(ngModel)]="reg_rollno">
+                            <mat-icon matSuffix>format_list_numbered</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="Email" value="" [(ngModel)]="reg_email">
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>ID photo</mat-label>
+                            <input type="idphoto" matInput placeholder="idphoto" value="" [(ngModel)]="reg_idphoto">
+                            <mat-icon matSuffix>upload</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Contact No</mat-label>
+                            <input type="contact" matInput placeholder="contact" value="" [(ngModel)]="reg_contact">
+                            <mat-icon matSuffix>local_phone</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="password" [(ngModel)]="reg_password">
+                            <mat-icon matSuffix>vpn_key</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Confirm Password</mat-label>
+                            <input type="password" matInput placeholder="password" [(ngModel)]="reg_confirm_password">
+                            <mat-icon matSuffix>vpn_key</mat-icon>
+                        </mat-form-field>
+
+                        <button mat-button color="primary">Submit</button>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</body>
+
+</html>

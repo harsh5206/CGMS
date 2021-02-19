@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Admin dashboard</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand text-dark" href="#">
+        <i class="fa fa-shield" aria-hidden="true"></i>
+        Department Of Complaints Management
+      </a>
+
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a href="#"
+            ><button type="button" class="btn btn-dark">Logout</button></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="text-center mt-4">
+      <h5>Welcome Eshaan!!</h5>
+      <h4 class="mt-5">Admin Dashboard</h4>
+    </div>
+
+    <div class="container col-sm-11 mt-4">
+      <div class="card">
+        <!-- <div class="card-header">
+            Reported Incidents
+          </div> -->
+        <div class="card-body">
+          <h5 class="card-title">Reported Incidents</h5>
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Name</th>
+                <th scope="col">Roll Number</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Division</th>
+                <th scope="col">Complaint-Type</th>
+                <th scope="col">Complaint-Description</th>
+                <th scope="col">action</th>
+              </tr>
+            </thead>
+
+            <tbody *ngFor="let complaint of complaints">
+              <tr>
+                <td>{{ complaint.name }}</td>
+                <td>{{ complaint.rollno }}</td>
+                <td>{{ complaint.branch }}</td>
+                <td>{{ complaint.division }}</td>
+                <td>{{ complaint.complaint_type }}</td>
+                <td>{{ complaint.complaint_desc }}</td>
+                <!--<a><i class="fa fa-trash" aria-hidden="true"></i></a>-->
+                <td>
+                  <input
+                    type="button"
+                    (click)="deleteComplaint(complaint._id)"
+                    value="Delete"
+                    class="btn btn-danger"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
